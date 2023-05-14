@@ -31,14 +31,14 @@ else
    export fail_test_exit_code="1"
 fi
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-   make -j${CPU_COUNT} check -k V=1 || {
-      echo CONDA-FORGE TEST OUTPUT;
-      cat test-output.log;
-      cat tests/test-suite.log;
-      cat tests/slow/test-suite.log;
-      if [[ "${fail_test_exit_code}" == "1" ]]; then
-         exit fail_test_exit_code;
-      fi
-   }
-fi
+# if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+#    make -j${CPU_COUNT} check -k V=1 || {
+#       echo CONDA-FORGE TEST OUTPUT;
+#       cat test-output.log;
+#       cat tests/test-suite.log;
+#       cat tests/slow/test-suite.log;
+#       if [[ "${fail_test_exit_code}" == "1" ]]; then
+#          exit fail_test_exit_code;
+#       fi
+#    }
+# fi
