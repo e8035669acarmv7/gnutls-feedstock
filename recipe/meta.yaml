@@ -1,4 +1,4 @@
-{% set version = "3.7.8" %}
+{% set version = "3.7.9" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 
 
@@ -8,10 +8,12 @@ package:
 
 source:
   url: https://www.gnupg.org/ftp/gcrypt/gnutls/v{{ major_minor }}/gnutls-{{ version }}.tar.xz
-  sha256: c58ad39af0670efe6a8aee5e3a8b2331a1200418b64b7c51977fb396d4617114
+  sha256: aaa03416cdbd54eb155187b359e3ec3ed52ec73df4df35a0edd49429ff64d844
   patches:
     # https://gitlab.com/gnutls/gnutls/-/issues/660
     - correct_ssl_test.patch
+    # https://gitlab.com/gnutls/gnutls/-/merge_requests/1794
+    - 1794_specify_osstatus_error_signature.patch
 
 build:
   number: 0
@@ -58,3 +60,4 @@ extra:
     - sachalau
     - sdvillal
     - scopatz
+    - hmaarrfk
