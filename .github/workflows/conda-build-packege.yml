@@ -20,7 +20,7 @@ jobs:
 
     - name: Configure qemu
       run: |
-        docker run --rm --privileged multiarch/qemu-user-static:register --reset
+        docker run --rm --privileged multiarch/qemu-user-static:register --reset -c yes
 
     - name: Build using docker
       env:
